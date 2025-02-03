@@ -1,0 +1,26 @@
+public class Main {
+    public static void main(String[] args) {
+          int MONTHS = 12;
+          int PERCENT = 100;
+
+          Scanner scanner = new Scanner(System.in);
+
+
+          System.out.print("PRINCIPAL:");
+          int principal = scanner.nextInt();
+
+          System.out.print("RATE:");
+          double rate = scanner.nextDouble();
+          double real_rate = rate/PERCENT/MONTHS;
+
+          System.out.print("NUMBER OF MONTHS:");
+          int number_of_months = scanner.nextInt();
+
+          double mortage = principal * (real_rate * Math.pow(1+real_rate,number_of_months))/Math.pow(1+
+                  real_rate,number_of_months) - 1;
+
+          String real_mortage = NumberFormat.getCurrencyInstance().format(mortage);
+          System.out.println("RESULT:" + real_mortage);
+
+        }
+    }
